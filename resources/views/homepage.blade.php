@@ -20,7 +20,13 @@
         <h1>Lista treni</h1>
         <ul>
             @foreach ($trains as $train)
-                <li>{{$train->departure_station}} - {{$train->arrival_station}}</li>
+                <li>
+                    <h3>{{$train->departure_station}} - {{$train->arrival_station}}</h3>
+                    <h4>{{$train->company}}</h4>
+                    <p>
+                        {{$train->departure_time}} - {{$train->arrival_time}}
+                    </p>
+                </li>
             @endforeach
         </ul>
     </main>
