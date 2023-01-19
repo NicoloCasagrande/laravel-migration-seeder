@@ -16,9 +16,12 @@ class TrainTableSeeder extends Seeder
             //istazio un oggetto del modello
             $new_train = new Train();
     
-            $new_train->company = $faker->word();
+            $new_train->company = $faker->company();
             $new_train->departure_station = $faker->city();
             $new_train->arrival_station = $faker->city();
+            while($new_train->departure_station === $new_train->arrival_station){
+                $new_train->arrival_station = $faker->city();
+            }
             $new_train->departure_time = $faker->dateTime();
             $new_train->arrival_time = $faker->dateTime();
             $new_train->code = $faker->numberBetween(0,100) . $faker->randomLetter() . $faker->randomLetter();
