@@ -22,7 +22,7 @@ class TrainTableSeeder extends Seeder
             while($new_train->departure_station === $new_train->arrival_station){
                 $new_train->arrival_station = $faker->city();
             }
-            $new_train->departure_time = $faker->dateTime();
+            $new_train->departure_time = $faker->dateTimeBetween('-1 days', '+2 days');
             $new_train->arrival_time = $faker->dateTime();
             $new_train->code = $faker->numberBetween(0,100) . $faker->randomLetter() . $faker->randomLetter();
             $new_train->wagon = $faker->randomDigit();
